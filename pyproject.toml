@@ -1,0 +1,33 @@
+
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "featomat" # Required
+version = "0.0.1" # Required
+description = "Automatic feature engineering from a duckdb database"
+readme = "README.md"
+authors = [{ name = "Jonas Krauss", email = "jonas@jonaskrauss.de" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["machine learning", "feature engineering", "duckdb"]
+dependencies = [
+    "duckdb",
+    "tsfresh",
+    "sqlalchemy"
+]
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = ["pip-tools", "pytest"]
+
+[project.urls]
+Homepage = "https://github.com/jkrauss/featomat"
+
+[project.scripts]
+featomat = "featomat.__main__:main"
